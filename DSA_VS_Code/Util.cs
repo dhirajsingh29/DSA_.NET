@@ -9,4 +9,9 @@ public static class Utility
             Console.WriteLine($"{index}\t{num}");
         }
     }
+
+    public static void Print<T>(string message, T item)
+    {
+        Console.WriteLine($"{message}: {item}");
+    }
 }
