@@ -1,6 +1,7 @@
 #!markdown
 
-[Leetcode - 1920] Build array from permutation  
+[Leetcode - 1920] Build array from permutation
+
 Given a **zero-based permutation** $nums$ (**0-indexed**), build an array $ans$ of the **same length** where $ans[i] = nums[nums[i]]$ for each $0 <= i < nums.length$ and return it.
 
 A **zero-based permutation** $nums$ is an array of **distinct** integers from $0$ to $nums.length - 1$ (**inclusive**).
@@ -22,6 +23,82 @@ ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]]
     = [4,5,0,1,2,3]
 
 Constraints:
-> - 1 <= nums.length <= 1000
-> - 0 <= nums[i] < nums.length
+> - $1 <= nums.length <= 1000$
+> - $0 <= nums[i] < nums.length$
 > - The elements in nums are **distinct**.
+
+**Follow-up:** Can you solve it without using an extra space (i.e., $O(1)$ memory)?
+
+#!csharp
+
+public int[] BuildArray (int[] nums)
+{
+    int[] ans = new int[nums.Length];
+
+    for (int i = 0; i < nums.Length; i++)
+    {
+        ans[i] = nums[nums[i]];
+    }
+
+    return ans;
+}
+
+int[] nums = new int[] {0, 2, 1, 5, 3, 4};
+
+int[] ans = BuildArray(nums);
+
+ans
+
+#!csharp
+
+// follow up question
+public void BuildArray (int[] nums)
+{
+    for (int i = 0; i < nums.Length; i++)
+    {
+        /* nums[i] = old value + (new value * large number)
+         * large number outside elements range
+         */
+        nums[i] = nums[i] + nums.Length * (nums[nums[i]] % nums.Length);
+    }
+
+    for (int i = 0; i < nums.Length; i++)
+    {
+        nums[i] = nums[i] / nums.Length;
+    }
+}
+
+int[] nums = new int[] {5, 0, 1, 2, 3, 4};
+
+BuildArray(nums);
+
+nums
+
+#!csharp
+
+// follow up question: another solution
+public void BuildArray (int[] nums)
+{
+    /* as per constarints, 0 <= nums[i] <= nums.Length
+     * max value for nums.Length can be 1000.
+     * Hence, mask is 1023 which has binary represenation of (1111111111).
+     */
+    int mask = 1023;
+    int bits = 10;
+
+    for (int i = 0; i < nums.Length; i++)
+    {
+        nums[i] = ((nums[nums[i]] & mask) << bits) | (nums[i] & mask);
+    }
+
+    for (int i = 0; i < nums.Length; i++)
+    {
+        nums[i] = nums[i] >> bits;
+    }
+}
+
+int[] nums = new int[] {5, 0, 1, 2, 3, 4};
+
+BuildArray(nums);
+
+nums
