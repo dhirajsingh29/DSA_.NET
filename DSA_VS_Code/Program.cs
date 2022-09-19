@@ -1,34 +1,89 @@
-﻿#region array
+﻿var algoToRun = Constants.None;
 
-// int[] nums = new int[] { 5, 0, 1, 2, 3, 4 };
-// BuildArrayFromPermutation.Build(nums);
-// Utility.PrintArray(nums);
+#region Common Variables
 
-// int[] nums = new int[] {1,2,1};
-// Utility.PrintArray(ConcatenationOfArray.Concat(nums));
-
-// int[] nums = new int[] {1,2,3,4};
-// RunningSumOfArray.Sum(nums);
-// Utility.PrintArray(nums);
-
-// int[][] accounts = new int[][] 
-// {
-//     new int[] {1,5},
-//     new int[] {7,3},
-//     new int[] {3,5}
-// };
-// Utility.Print("Richest customer wealth", RichestCustomerWealth.GetMaxWealth(accounts));
-
-int[] nums = new int[] {2,5,1,3,4,7};
-int n = 3;
-// Utility.PrintArray(ShuffleArray.Shuffle_1(nums, n));
-// ShuffleArray.Shuffle_2(nums, n);
-// ShuffleArray.Shuffle_3(nums, n);
-// Utility.PrintArray(nums);
-
-int[] candies = new int[] {2,3,5,1,3};
-int extraCandies = 3;
-IList<bool> res = KidsWithGreatestCandies.KidsWithCandies(candies, extraCandies);
-Utility.PrintListWithIndex<bool>(res);
+bool flag = true;
+int[] nums;
+string[] tempString;
+int numOfElements;
 
 #endregion
+
+while (flag)
+{
+    Console.Write("\nEnter algo to be run: ");
+    Enum.TryParse<Constants>(Console.ReadLine() ?? "None", true, out algoToRun);
+
+    switch (algoToRun)
+    {
+        #region array
+
+        case Constants.BuildArrayFromPermutation:
+            Console.Write("Enter space separated array elements: ");
+            tempString = Console.ReadLine()!.Split(' ');
+            nums = Array.ConvertAll<string, int>(tempString, int.Parse);
+
+            SetupAndExecute.BuildArray(nums);
+            break;
+
+        case Constants.ConcatenationOfArray:
+            Console.Write("Enter space separated array elements: ");
+            tempString = Console.ReadLine()!.Split(' ');
+            nums = Array.ConvertAll<string, int>(tempString, int.Parse);
+
+            SetupAndExecute.ConcatenateArrays(nums);
+            break;
+
+        case Constants.KidsWithGreatestCandies:
+            Console.Write("Enter space separated candies array elements: ");
+            tempString = Console.ReadLine()!.Split(' ');
+            nums = Array.ConvertAll<string, int>(tempString, int.Parse);
+
+            Console.Write("Enter extra candies: ");
+            int extraCandies = Convert.ToInt32(Console.ReadLine());
+
+            SetupAndExecute.KidsHavingGreatestCandies(candies: nums, extraCandies);
+            break;
+
+        case Constants.RichestCustomerWealth:
+            Console.Write("Provide number of customers: ");
+            int numOfCustomers = Convert.ToInt32(Console.ReadLine());
+
+            int[][] accounts = new int[numOfCustomers][];
+            for (int i = 0; i < numOfCustomers; i++)
+            {
+                Console.Write("Enter space separated amounts array per client: ");
+                tempString = Console.ReadLine()!.Split(' ');
+                nums = Array.ConvertAll<string, int>(tempString, int.Parse);
+                accounts[i] = nums;
+            }
+
+            SetupAndExecute.RichestCustomer(accounts);
+            break;
+
+        case Constants.RunningSumOfArray:
+            Console.Write("Enter space separated array elements: ");
+            tempString = Console.ReadLine()!.Split(' ');
+            nums = Array.ConvertAll<string, int>(tempString, int.Parse);
+
+            SetupAndExecute.RunningSum(nums);
+            break;
+
+        case Constants.ShuffleArray:
+            Console.Write("Enter space separated array elements: ");
+            tempString = Console.ReadLine()!.Split(' ');
+            nums = Array.ConvertAll<string, int>(tempString, int.Parse);
+
+            Console.Write("Number of elements(2n): ");
+            numOfElements = Convert.ToInt32(Console.ReadLine());
+
+            SetupAndExecute.ShufflingArray(nums, numOfElements);
+            break;
+
+        #endregion
+
+        default:
+            flag = false;
+            break;
+    }
+}
