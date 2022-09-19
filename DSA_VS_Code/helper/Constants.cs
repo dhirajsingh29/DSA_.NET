@@ -13,6 +13,7 @@ public enum Constants
 
     #region Searching
     Sqrt,
-    TwoSumSortedArray
+    TwoSumSortedArray,
+    ValidPerfectSquare
     #endregion
 }

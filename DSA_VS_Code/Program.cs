@@ -6,6 +6,7 @@ bool flag = true;
 int[] nums;
 string[] tempString;
 int numOfElements;
+int num;
 
 #endregion
 
@@ -98,6 +99,13 @@ while (flag)
             int targetSum = Convert.ToInt32(Console.ReadLine());
 
             SetupAndExecute.TwoSumSortedArray(nums, targetSum);
+            break;
+
+        case Constants.ValidPerfectSquare:
+            Console.Write("Enter number to find it is valid perfect square or not: ");
+            num = Convert.ToInt32(Console.ReadLine());
+
+            SetupAndExecute.ValidPerfectSquare(num);
             break;
         #endregion
 

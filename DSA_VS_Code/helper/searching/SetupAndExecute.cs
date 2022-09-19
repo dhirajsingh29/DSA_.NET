@@ -11,4 +11,10 @@ public partial class SetupAndExecute
         int[] res = TwoSumII.FindIndices(nums, target);
         Utility.PrintArray<int>(res);
     }
+
+    public static void ValidPerfectSquare (int num)
+    {
+        bool res = PerfectSquare.Valid(num);
+        Utility.Print<bool>($"Is {num} valid perfect square?", res);
+    }
 }
