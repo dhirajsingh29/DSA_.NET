@@ -8,7 +8,7 @@ public enum Constants
     KidsWithGreatestCandies,
     RichestCustomerWealth,
     RunningSumOfArray,
-    ShuffleArray
+    ShuffleArray,
     #endregion
 
     #region Searching

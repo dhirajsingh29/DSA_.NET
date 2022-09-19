@@ -99,7 +99,6 @@ while (flag)
 
             SetupAndExecute.TwoSumSortedArray(nums, targetSum);
             break;
-
         #endregion
 
         default:

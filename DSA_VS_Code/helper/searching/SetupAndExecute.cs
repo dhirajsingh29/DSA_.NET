@@ -1,4 +1,4 @@
-public class SetupAndExecute
+public partial class SetupAndExecute
 {
     public static void Sqrt (int num)
     {
