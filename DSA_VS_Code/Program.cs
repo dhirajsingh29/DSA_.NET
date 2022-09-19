@@ -8,7 +8,14 @@
 
 var algoToRun = Constants.Sqrt;
 
+#region Common Variables
+
 bool flag = true;
+int[] nums;
+string[] tempString;
+
+#endregion
+
 
 while (flag)
 {
@@ -23,6 +30,17 @@ while (flag)
             Console.Write("Enter number to calculate square root: ");
             int numForSqrt = Convert.ToInt32(Console.ReadLine());
             SetupAndExecute.Sqrt(numForSqrt);
+            break;
+
+        case Constants.TwoSumSortedArray:            
+            Console.Write("Enter space separated array elements: ");
+            tempString = Console.ReadLine()!.Split(' ');
+            nums = Array.ConvertAll<string, int>(tempString, int.Parse);
+
+            Console.Write("Enter target sum: ");
+            int targetSum = Convert.ToInt32(Console.ReadLine());
+
+            SetupAndExecute.TwoSumSortedArray(nums, targetSum);
             break;
 
         #endregion

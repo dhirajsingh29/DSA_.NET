@@ -3,6 +3,7 @@ public enum Constants
     None,
 
     #region Searching
-    Sqrt
+    Sqrt,
+    TwoSumSortedArray
     #endregion
 }
