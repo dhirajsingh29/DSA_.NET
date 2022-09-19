@@ -9,3 +9,9 @@ To run the program, name of algo needs to be provided. Below are the names to ru
 | RichestCustomerWealth | [Leetcode - 1627](https://leetcode.com/problems/richest-customer-wealth/) |
 | RunningSumOfArray | [Leetcode - 1480](https://leetcode.com/problems/running-sum-of-1d-array/) |
 | ShuffleArray | [Leetcode - 1470](https://leetcode.com/problems/shuffle-the-array/) |
+
+**<ins>Searching</ins>**
+| Algo Name | Leetcode reference |
+| :---: | :---: |
+| Sqrt | [Leetcode - 69](https://leetcode.com/problems/sqrtx/) |
+| TwoSumSortedArray | [Leetcode - 167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) | 

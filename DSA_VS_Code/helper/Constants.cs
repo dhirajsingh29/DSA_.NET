@@ -10,4 +10,9 @@ public enum Constants
     RunningSumOfArray,
     ShuffleArray
     #endregion
+
+    #region Searching
+    Sqrt,
+    TwoSumSortedArray
+    #endregion
 }
