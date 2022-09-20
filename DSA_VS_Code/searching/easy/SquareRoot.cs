@@ -3,7 +3,7 @@ public class SquareRoot
     public static int Sqrt (int x)
     {
         int start = 1;
-        int end = x;
+        int end = x / 2;
 
         while (start <= end)
         {
