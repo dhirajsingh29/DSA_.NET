@@ -3,10 +3,6 @@
 #region Common Variables
 
 bool flag = true;
-int[] nums;
-string[] tempString;
-int numOfElements;
-int num;
 
 #endregion
 
@@ -20,92 +16,42 @@ while (flag)
         #region array
 
         case Constants.BuildArrayFromPermutation:
-            Console.Write("Enter space separated array elements: ");
-            tempString = Console.ReadLine()!.Split(' ');
-            nums = Array.ConvertAll<string, int>(tempString, int.Parse);
-
-            SetupAndExecute.BuildArray(nums);
+            SetupAndExecute.BuildArray();
             break;
 
         case Constants.ConcatenationOfArray:
-            Console.Write("Enter space separated array elements: ");
-            tempString = Console.ReadLine()!.Split(' ');
-            nums = Array.ConvertAll<string, int>(tempString, int.Parse);
-
-            SetupAndExecute.ConcatenateArrays(nums);
+            SetupAndExecute.ConcatenateArrays();
             break;
 
         case Constants.KidsWithGreatestCandies:
-            Console.Write("Enter space separated candies array elements: ");
-            tempString = Console.ReadLine()!.Split(' ');
-            nums = Array.ConvertAll<string, int>(tempString, int.Parse);
-
-            Console.Write("Enter extra candies: ");
-            int extraCandies = Convert.ToInt32(Console.ReadLine());
-
-            SetupAndExecute.KidsHavingGreatestCandies(candies: nums, extraCandies);
+            SetupAndExecute.KidsHavingGreatestCandies();
             break;
 
         case Constants.RichestCustomerWealth:
-            Console.Write("Provide number of customers: ");
-            int numOfCustomers = Convert.ToInt32(Console.ReadLine());
-
-            int[][] accounts = new int[numOfCustomers][];
-            for (int i = 0; i < numOfCustomers; i++)
-            {
-                Console.Write("Enter space separated amounts array per client: ");
-                tempString = Console.ReadLine()!.Split(' ');
-                nums = Array.ConvertAll<string, int>(tempString, int.Parse);
-                accounts[i] = nums;
-            }
-
-            SetupAndExecute.RichestCustomer(accounts);
+            SetupAndExecute.RichestCustomer();
             break;
 
         case Constants.RunningSumOfArray:
-            Console.Write("Enter space separated array elements: ");
-            tempString = Console.ReadLine()!.Split(' ');
-            nums = Array.ConvertAll<string, int>(tempString, int.Parse);
-
-            SetupAndExecute.RunningSum(nums);
+            SetupAndExecute.RunningSum();
             break;
 
         case Constants.ShuffleArray:
-            Console.Write("Enter space separated array elements: ");
-            tempString = Console.ReadLine()!.Split(' ');
-            nums = Array.ConvertAll<string, int>(tempString, int.Parse);
-            
-            Console.Write("Number of elements(2n): ");
-            numOfElements = Convert.ToInt32(Console.ReadLine());
-
-            SetupAndExecute.ShufflingArray(nums, numOfElements);
+            SetupAndExecute.ShufflingArray();
             break;
         #endregion
 
         #region searching
 
         case Constants.Sqrt:
-            Console.Write("Enter number to calculate square root: ");
-            int numForSqrt = Convert.ToInt32(Console.ReadLine());
-            SetupAndExecute.Sqrt(numForSqrt);
+            SetupAndExecute.Sqrt();
             break;
 
-        case Constants.TwoSumSortedArray:            
-            Console.Write("Enter space separated array elements: ");
-            tempString = Console.ReadLine()!.Split(' ');
-            nums = Array.ConvertAll<string, int>(tempString, int.Parse);
-            
-            Console.Write("Enter target sum: ");
-            int targetSum = Convert.ToInt32(Console.ReadLine());
-
-            SetupAndExecute.TwoSumSortedArray(nums, targetSum);
+        case Constants.TwoSumSortedArray:
+            SetupAndExecute.TwoSumSortedArray();
             break;
 
         case Constants.ValidPerfectSquare:
-            Console.Write("Enter number to find it is valid perfect square or not: ");
-            num = Convert.ToInt32(Console.ReadLine());
-
-            SetupAndExecute.ValidPerfectSquare(num);
+            SetupAndExecute.ValidPerfectSquare();
             break;
         #endregion
 
